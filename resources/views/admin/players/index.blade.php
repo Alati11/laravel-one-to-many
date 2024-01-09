@@ -19,19 +19,21 @@
                 <thead>
                     <tr>
                         <th>Ranking</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Age</th>
-                        <th>Weight </th>
-                        <th>Height</th>
-                        <th>Points</th>
-                        <th>Country</th>
+                        <th>Categoria</th>
+                        <th>Nome</th>
+                        <th>Immagine</th>
+                        <th>Età</th>
+                        <th>Peso</th>
+                        <th>Altezza</th>
+                        <th>Punti</th>
+                        <th>Città</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($players as $player)
                         <tr>
                             <td>{{$player->ranking}}</td>
+                            <th> {{ $player->type_id}}</th>
                             <td>
                                 <a class="text-decoration-none" href="{{ route('admin.players.show',$player)}}"> 
                                     {{ $player->name }}

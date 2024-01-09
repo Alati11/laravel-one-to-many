@@ -21,5 +21,10 @@ class Player extends Model
     //     '_token',
     // ];
     protected $guarded = [];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
 
