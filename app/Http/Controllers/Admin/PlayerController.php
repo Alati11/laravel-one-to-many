@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Player;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -22,7 +23,11 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('admin.players.create');
+        // return view('admin.players.create');
+
+        $types = Type::orderBy('name', 'ASC')->get();
+
+        return view('admin.players.create', compact('types'));
     }
 
     /**
@@ -40,6 +45,7 @@ class PlayerController extends Controller
             'points'=> 'required|numeric|min:600|max:20000',
             'country'=> 'required|min:3|max:30',
             'ranking'=> 'required|numeric|min:1|max:200',
+            'type_id'=> 'required|exists:types,id'
 
             ]);
 
@@ -62,7 +68,10 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        return view('admin.players.edit', compact('player'));
+        // return view('admin.players.edit', compact('player'));
+        $types = Type::orderBy('name', 'ASC')->get();
+
+        return view('admin.players.edit', compact('player','types'));
     }
 
     /**

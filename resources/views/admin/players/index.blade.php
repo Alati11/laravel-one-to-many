@@ -33,7 +33,7 @@
                     @forelse ($players as $player)
                         <tr>
                             <td>{{$player->ranking}}</td>
-                            <th> {{ $player->type_id}}</th>
+                            <th> {{$player->type_id}}</th>
                             <td>
                                 <a class="text-decoration-none" href="{{ route('admin.players.show',$player)}}"> 
                                     {{ $player->name }}

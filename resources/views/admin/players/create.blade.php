@@ -9,6 +9,7 @@
                 <label for="name" class="form-label">Name Player</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="{{old('name')}}"required>
             </div>
+
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
                 <input type="number" class="form-control" name="age" id="age" placeholder="Min 17" value="{{old('age')}}"required>
@@ -29,6 +30,15 @@
                 <label for="country" class="form-label">Country</label>
                 <input type="text" class="form-control" name="country" id="country" placeholder="Country" value="{{old('country')}}"required>
             </div>
+            <div class="mb-3">
+                <label for="type_id" class="form-label">Categoria</label>
+                <select name="type_id" class="form-control" id="type_id">
+                  <option>Seleziona una categoria</option>
+                  @foreach($types as $type)
+                    <option @selected( old('type_id') == $type->id ) value="{{ $type->id }}">{{ $type->name }}</option>
+                  @endforeach
+                </select>
+              </div>
             <div class="mb-3">
                 <label for="ranking" class="form-label">Ranking</label>
                 <input type="number" class="form-control" name="ranking" id="ranking" placeholder="1-200" value="{{old('ranking')}}"required>

@@ -13,11 +13,12 @@
                     </div>
                     <ul>
                         <li>Ranking - {{$player->ranking}}</li>
-                        <li>Age - {{$player->age}}</li>
-                        <li>Weight kg - {{$player->weight}}</li>
-                        <li>Height cm - {{$player->height}}</li>
-                        <li>Official Points - {{$player->points}}</li>    
-                        <li>Country -{{$player->country}}</li>
+                        <li>Categoria - {{$player->type_id}}</li>
+                        <li>Età - {{$player->age}}</li>
+                        <li>Peso kg - {{$player->weight}}</li>
+                        <li>Altezza cm - {{$player->height}}</li>
+                        <li>Punti - {{$player->points}}</li>    
+                        <li>Città - {{$player->country}}</li>
                     </ul>
                 </div>
             </div>

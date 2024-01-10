@@ -18,6 +18,7 @@ class Player extends Model
     //     'height',
     //     'points',
     //     'country',
+    
     //     '_token',
     // ];
     protected $guarded = [];
